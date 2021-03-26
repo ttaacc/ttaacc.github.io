@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-<!--     <script type="text/javascript">
-        function loadPdf() {
-            var viewer = document.getElementById("ScanPdf");
-            var parent = viewer.parentElement;
-            var newViewer = document.createElement("object");
-            viewer.remove(); 
-            newViewer.setAttribute("data", "https://www.pdf995.com/samples/pdf.pdf");
-            newViewer.style = oldStyle;
-            parent.appendChild(newViewer);
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #the-canvas {
+        border: 1px solid black;
+        direction: ltr;
         }
-
-    </script> -->
+    </style>
 </head>
 <body>
-    <object width="400px" height="400px" 
-    data="https://s3.amazonaws.com/dq-blog-files/pandas-cheat-sheet.pdf">
-</object>
-<button onclick="loadPdf()">LOAD PDF</button>
+  
+    <script src="./build/pdf.js"></script>
+    
+   
+<h1>PDF.js Previous/Next example</h1>
+
+<div>
+  <button id="prev">Previous</button>
+  <button id="next">Next</button>
+  &nbsp; &nbsp;
+  <span>頁數: <span id="page_num"></span> / <span id="page_count"></span></span>
+</div>
+
+<canvas id="the-canvas"></canvas>
+
+
+<script src="./test.js"></script>
 </body>
 </html>
