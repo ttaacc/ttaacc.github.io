@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function loadPdf() {
+            var viewer = document.getElementById("ScanPdf");
+            var parent = viewer.parentElement;
+            var newViewer = document.createElement("object");
+            viewer.remove(); 
+            newViewer.setAttribute("data", "https://www.pdf995.com/samples/pdf.pdf");
+            newViewer.style = oldStyle;
+            parent.appendChild(newViewer);
+        }
+
+    </script>
+</head>
+<body>
+    <object width="80%" height="1000px" 
+    data="https://s3.amazonaws.com/dq-blog-files/pandas-cheat-sheet.pdf">
+</object>
+<button onclick="loadPdf()">LOAD PDF</button>
+</body>
+</html>
