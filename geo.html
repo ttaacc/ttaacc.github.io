@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to get your coordinates.</p>
+    <p id="demo"></p>
+    <p id="map"></p>
+<button onclick="getLocation()">Try It</button>
+    <script>
+        var x = document.getElementById("demo");
+        var map = document.getElementById("map");
+        function getLocation() {
+            if (navigator.geolocation) {
+                console.log("1")
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                console.log("2")
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            console.log("Latitude"+position.coords.latitude)
+            console.log("Longitude"+position.coords.longitude)
+        // x.innerHTML = "Latitude: " + position.coords.latitude +
+        // "<br>Longitude: " + position.coords.longitude;}
+        var latitude=position.coords.latitude
+        var longitude=position.coords.longitude
+        map.innerHTML= '<iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+latitude+','+longitude+'&z=16&output=embed&t=></iframe>'
+       
+        }
+
+    </script>
+
+</body>
+</html>
